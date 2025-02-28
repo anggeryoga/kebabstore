@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -575,12 +576,14 @@ header h1::after {
     </header>
 
     <div class="container">
-        <div class="menu-tabs">
-            <button class="tab-btn active" data-category="all">Semua</button>
-            <button class="tab-btn" data-category="kebab">Kebab</button>
-            <button class="tab-btn" data-category="juice">Jus</button>
-            <button class="tab-btn" data-category="snacks">Jajanan</button>
-        </div>
+<div class="menu-tabs">
+    <button class="tab-btn active" data-category="all">Semua</button>
+    <button class="tab-btn" data-category="makanan">Makanan</button>
+    <button class="tab-btn" data-category="cemilan">Cemilan</button>
+    <button class="tab-btn" data-category="minuman">Minuman</button>
+    <button class="tab-btn" data-category="kebab">Kebab</button>
+</div>
+
 
         <div class="product-grid" id="productList">
             <!-- Products will be generated here -->
@@ -654,54 +657,143 @@ header h1::after {
 
         // Data produk dalam format JavaScript
         const products = [
-            {
-                id: 1,
-                name: "Kebab Turki Original",
-                price: 10000,
-                discount: 10,
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtGcftkfC8hqVBWF1kOhTn5db3ifNGb5EB9khhk21GbNk8RvZ5IKG510vlSSl9RGTnknn5OP4h6QigzQ9kgAhHzLK2eyGBDYdvFXSZQ",
-                category: "kebab",
-                variants: ["Original", "Pedas", "Extra Pedas"]
-            },
-            {
-                id: 3,
-                name: "Jus Alpukat",
-                price: 8000,
-                discount: 5,
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtGcftkfC8hqVBWF1kOhTn5db3ifNGb5EB9khhk21GbNk8RvZ5IKG510vlSSl9RGTnknn5OP4h6QigzQ9kgAhHzLK2eyGBDYdvFXSZQ",
-                category: "juice",
-                variants: ["Original", "Mix Susu", "Mix Coklat"]
-            },
+    {
+        id: 1,
+        name: "Ayam Keju",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://img-global.cpcdn.com/recipes/ea426a4a34a5c959/400x400cq70/photo.jpg",
+        category: "makanan",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 2,
+        name: "Pangsit Goreng",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX9EnZgeIlZ3ddQ45FiuRbYYJkM6OYE47mCA&s",
+        category: "cemilan",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 3,
+        name: "Ayam Rambutan",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://www.dapurkobe.co.id/wp-content/uploads/ayam-rambutan.jpg",
+        category: "makanan",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 4,
+        name: "Pangsit Chili Oil",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/250/2024/10/21/Vegan-Wonton-Chili-Oil-scaled-copy-3792509920.jpg",
+        category: "cemilan",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 5,
+        name: "Chicken Wing",
+        price: 6000,
+        discount: 0,
+        imageUrl: "https://www.recipetineats.com/tachyon/2024/11/New-Oreleans-chicken-wings_1.jpg",
+        category: "makanan",
+        variants: ["Fire Saos", "Bolognese", "Geprek"]
+    },
+    {
+        id: 6,
+        name: "Chicken Popcorn",
+        price: 6000,
+        discount: 0,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEMlezemGyA9xa8yWYt6SnNvG9r-CPy6sNQ&s",
+        category: "makanan",
+        variants: ["Fire Saos", "Bolognese", "Geprek"]
+    },
+    {
+        id: 7,
+        name: "Spageti Bolognese",
+        price: 5000, // Diperbaiki dari 0 ke 5000
+        discount: 0,
+        imageUrl: "https://cdn1-production-images-kly.akamaized.net/Gs5apuxwEUuyzhhZKejFwgO8pOs=/0x194:5616x3359/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3048436/original/030475400_1581499756-shutterstock_413580649.jpg",
+        category: "makanan",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 8,
+        name: "Nasi Putih",
+        price: 3000,
+        discount: 0,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUh5bqsScdDcVemchIUMuL9fTfPspPFFwZIg&s",
+        category: "makanan",
+        variants: ["No Variant"]
+    },
+    {
+        id: 9,
+        name: "Kopi Spesial",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://asset.kompas.com/crops/C8Mo8F0gQE6PyXXec9oLxarbh1s=/34x24:475x318/1200x800/data/photo/2021/08/05/610b6ce6b3440.jpg",
+        category: "minuman",
+        variants: ["Gula Aren", "Susu", "Karamel"]
+    },
+    {
+        id: 10,
+        name: "Kopi Signature",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://cdn1-production-images-kly.akamaized.net/HsfW735frtCCJWhRfg5hoCP9PEU=/0x1967:2759x3522/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4212854/original/028658700_1667442943-pariwat-pannium-EgDkl00Hiqw-unsplash.jpg",
+        category: "minuman",
+        variants: ["Hazelnut", "Butterscotch"]
+    },
+    {
+        id: 11,
+        name: "Milk Shake",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://img.okezone.com/content/2016/07/13/481/1436924/minuman-milkshake-bisa-menurunkan-berat-badan-3VtdOMuuxu.jpg",
+        category: "minuman",
+        variants: ["Coklat", "Korean Strawberry"]
+    },
+    {
+        id: 12,
+        name: "Roti Bakar",
+        price: 3000,
+        discount: 0,
+        imageUrl: "https://cdn1-production-images-kly.akamaized.net/89U64fKOEkQz3jU1paKVJPYys84=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2469757/original/039967700_1543260105-resep-sederhana-roti-bakar-cokelat-keju-spesial-pakai-roti-tawar.jpg",
+        category: "makanan",
+        variants: ["Strawberry", "Blueberry", "Coklat", "Sandwich"]
+    },
+    {
+        id: 13,
+        name: "Kebab Ori",
+        price: 5000,
+        discount: 0,
+        imageUrl: "https://www.dapurkobe.co.id/wp-content/uploads/kebab-sosis.jpg",
+        category: "kebab",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 14,
+        name: "Kebab Jumbo",
+        price: 8000,
+        discount: 0,
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Ofqan_LQ0vXfB027tso9CtcT4h34TB6lCg&s",
+        category: "kebab",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    },
+    {
+        id: 15,
+        name: "Kebab Spesial",
+        price: 10000,
+        discount: 0,
+        imageUrl: "https://cdn0-production-images-kly.akamaized.net/7f3byLchmG2U7Ca6uNHICwIg-H4=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3093628/original/008903900_1585930368-burrito-chicken-delicious-dinner-461198.jpg",
+        category: "kebab",
+        variants: ["Tidak pedas", "Pedas", "Extra pedas"]
+    }
+];
 
-            {
-                id: 5,
-                name: "Basreng Pedas",
-                price: 5000,
-                discount: 0,
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtGcftkfC8hqVBWF1kOhTn5db3ifNGb5EB9khhk21GbNk8RvZ5IKG510vlSSl9RGTnknn5OP4h6QigzQ9kgAhHzLK2eyGBDYdvFXSZQ",
-                category: "snacks",
-                variants: ["Original", "Pedas Level 1", "Pedas Level 2", "Pedas Level 3"]
-            },
-
-            {
-                id: 7,
-                name: "Jus Strawberry",
-                price: 8000,
-                discount: 0,
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtGcftkfC8hqVBWF1kOhTn5db3ifNGb5EB9khhk21GbNk8RvZ5IKG510vlSSl9RGTnknn5OP4h6QigzQ9kgAhHzLK2eyGBDYdvFXSZQ",
-                category: "juice",
-                variants: ["Original", "Mix Susu", "Mix Yogurt"]
-            },
-            {
-                id: 8,
-                name: "Kebab Mini",
-                price: 7000,
-                discount: 20,
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtGcftkfC8hqVBWF1kOhTn5db3ifNGb5EB9khhk21GbNk8RvZ5IKG510vlSSl9RGTnknn5OP4h6QigzQ9kgAhHzLK2eyGBDYdvFXSZQ",
-                category: "kebab",
-                variants: ["Original", "Pedas"]
-            }
-        ];
 
 
         // Fungsi untuk menambahkan padding pada angka
