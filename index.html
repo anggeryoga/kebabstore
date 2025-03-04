@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEWANYA NYEMIL</title>
+    <title>SIINFOOD DEMO</title>
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -17,7 +17,7 @@
     <!-- QR Code Generator -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
     <style>
-        /* Neo-brutalist CSS for DEWANYA NYEMIL */
+        /* Neo-brutalist CSS for SIINFOOD DEMO */
         :root {
             --primary-color: #ff5252;
             --secondary-color: #ffdf5e;
@@ -652,7 +652,7 @@
 
 <body>
     <header>
-        <h1>DEWANYA NYEMIL</h1>
+        <h1>SIINFOOD DEMO</h1>
     </header>
 
     <div class="container">
@@ -710,8 +710,8 @@
             </div>
 
             <div class="form-group">
-                <label for="phoneInput">Nomor HP*</label>
-                <input type="tel" id="phoneInput" placeholder="08xxxxxxxxxx" required>
+                <label for="emailInput">Email*</label>
+                <input type="email" id="emailInput" placeholder="email@example.com" required>
             </div>
 
             <button class="generate-btn" id="generateButton">Buat QR Code Pembayaran</button>
@@ -726,8 +726,8 @@
 
     <script>
         // Dummy data untuk QRIS
-        const qrisInput = "00020101021126610014COM.GO-JEK.WWW01189360091436645947040210G6645947040303UMI51440014ID.CO.QRIS.WWW0215ID10253811739190303UMI5204549953033605802ID5914Dewanya nyemil6006JEPARA61055946262070703A016304765D";
-        const waNumber = '628976255469'; // Ganti dengan nomor WhatsApp Anda
+        const qrisInput = "00020101021126610014COM.GO-JEK.WWW01189360091432840999140210G2840999140303UMI51440014ID.CO.QRIS.WWW0215ID10253780771980303UMI5204549953033605802ID5916SIINMEDIA, PCNGN6006JEPARA61055946262070703A01630456FE";
+        const waNumber = '6285155145788'; // Ganti dengan nomor WhatsApp Anda
         const appScriptURL = 'https://script.google.com/macros/s/AKfycbxLJ9uFuNApYtLNRaBo6DnDtI-DXQZ2qLOOQgMWGoMHthbjQaf6kD91kYKSnldPEbcM_A/exec'; // Ganti dengan URL script GAS Anda
 
         // Data produk dalam format JavaScript
@@ -1219,7 +1219,7 @@
                 ).join('\n');
 
                 // Construct the WhatsApp message
-                let whatsappMessage = `*Pesanan Baru dari DEWANYA NYEMIL*\n\n`;
+                let whatsappMessage = `*Pesanan Baru dari SIINFOOD DEMO*\n\n`;
                 whatsappMessage += `*Nama:* ${name}\n`;
                 whatsappMessage += `*Email:* ${email}\n`;
                 whatsappMessage += `*Nomor HP:* ${phone}\n\n`;
