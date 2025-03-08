@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dewanya Nyemil</title>
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foalamant-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -708,8 +708,8 @@
             </div>
 
             <div class="form-group">
-                <label for="alamatInput">Alamat Rumah</label>
-                <input type="alamat" id="alamatInput" placeholder="Alamat pemesan">
+                <label for="AlamatInput">Alamat Rumah</label>
+                <input type="Alamat" id="AlamatInput" placeholder="Alamat pemesan">
             </div>
 
             <div class="form-group">
@@ -1171,11 +1171,11 @@
             // Fungsi untuk membuat QRIS dan menampilkannya
             document.getElementById('generateButton').addEventListener('click', function () {
                 const name = document.getElementById('nameInput').value;
-                const alamat = document.getElementById('alamatInput').value;
+                const Alamat = document.getElementById('AlamatInput').value;
                 const phone = document.getElementById('phoneInput').value;
                 const totalPrice = document.getElementById('totalPriceInput').value;
 
-                if (!name || !alamat || !phone) {
+                if (!name || !Alamat || !phone) {
                     alert('Harap isi semua kolom yang diperlukan!');
                     return;
                 }
@@ -1203,7 +1203,7 @@
                 // Optional: Store the payment information in localStorage
                 localStorage.setItem('paymentInfo', JSON.stringify({
                     name: name,
-                    alamat: alamat,
+                    Alamat: Alamat,
                     phone: phone,
                     totalPrice: totalPrice
                 }));
@@ -1212,7 +1212,7 @@
             // Konfirmasi Pembayaran
             confirmPaymentButton.addEventListener('click', function () {
                 const name = document.getElementById('nameInput').value;
-                const alamat = document.getElementById('alamatInput').value;
+                const Alamat = document.getElementById('AlamatInput').value;
                 const phone = document.getElementById('phoneInput').value;
                 const totalPrice = document.getElementById('totalPriceInput').value;
 
@@ -1224,7 +1224,7 @@
                 // Construct the WhatsApp message
                 let whatsappMessage = `*Pesanan Baru dari Dewanya Nyemil*\n\n`;
                 whatsappMessage += `*Nama:* ${name}\n`;
-                whatsappMessage += `*alamat:* ${alamat}\n`;
+                whatsappMessage += `*Alamat:* ${Alamat}\n`;
                 whatsappMessage += `*Nomor HP:* ${phone}\n\n`;
                 whatsappMessage += `*Detail Pesanan:*\n${cartDetails}\n\n`;
                 whatsappMessage += `*Total:* Rp ${totalPrice.toLocaleString()}\n\n`;
@@ -1237,14 +1237,14 @@
                 const whatsappURL = `https://wa.me/${waNumber}?text=${encodedMessage}`;
 
                 // Send to Google Apps Script and then redirect
-                sendToGoogleSheets(name, alamat, phone, totalPrice, cartDetails, whatsappURL);
+                sendToGoogleSheets(name, Alamat, phone, totalPrice, cartDetails, whatsappURL);
 
                 modal.style.display = "none";
                 clearCart();
                 alert('Pembayaran berhasil! Kami akan segera memproses pesanan Anda.');
             });
 
-            function sendToGoogleSheets(name, alamat, phone, totalPrice, cartDetails, whatsappURL) {
+            function sendToGoogleSheets(name, Alamat, phone, totalPrice, cartDetails, whatsappURL) {
                 fetch(appScriptURL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -1253,7 +1253,7 @@
                     },
                     body: new URLSearchParams({
                         'name': name,
-                        'alamat': alamat,
+                        'Alamat': Alamat,
                         'phone': phone,
                         'totalPrice': totalPrice,
                         'cartDetails': cartDetails,
